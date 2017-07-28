@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_above="@+id/layoutMid"
+       android:scaleType="centerInside"
+       android:src="@drawable/shop"/>
+
+    <LinearLayout
+        android:id="@+id/layoutMid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginLeft="@dimen/default_padding_smaller"
+        android:layout_marginRight="@dimen/default_padding_smaller"
+        android:layout_above="@+id/layoutBottom"
+        android:orientation="horizontal">
+
+        <com.example.ecommerce.custom.ItemCategory
+            android:id="@+id/catOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:IconRes="@drawable/pants"
+            app:TitleCat="Pants"/>
+
+        <com.example.ecommerce.custom.ItemCategory
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:IconRes="@drawable/coat"
+            app:TitleCat="Coat"
+            android:layout_weight="1"/>
+
+        <com.example.ecommerce.custom.ItemCategory
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:IconRes="@drawable/dress"
+            app:TitleCat="Dresses"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginLeft="@dimen/default_padding_smaller"
+        android:layout_marginRight="@dimen/default_padding_smaller"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.example.ecommerce.custom.ItemCategory
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:IconRes="@drawable/diamond"
+            app:TitleCat="Diamond"/>
+
+        <com.example.ecommerce.custom.ItemCategory
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:IconRes="@drawable/sunglasses"
+            app:TitleCat="Glasses"
+            android:layout_weight="1"/>
+
+        <com.example.ecommerce.custom.ItemCategory
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:IconRes="@drawable/comments"
+            app:TitleCat="Chat"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

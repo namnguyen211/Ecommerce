@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+
+    <string name="back">Back</string>
+    <string name="back_to_exit">Press back again to exit!</string>
+</resources>

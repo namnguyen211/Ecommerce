@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ItemCategory">
+        <attr name="IconRes" format="reference"/>
+        <attr name="TitleCat" format="string"/>
+    </declare-styleable>
+</resources>
