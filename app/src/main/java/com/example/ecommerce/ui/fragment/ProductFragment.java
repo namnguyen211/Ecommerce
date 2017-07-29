@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -35,6 +36,9 @@ public class ProductFragment extends BaseAppMainFragment implements ProductPrese
     @BindView(R.id.recyclerViewProduct)
     RecyclerView recyclerViewProduct;
 
+    @BindView(R.id.btnOrder)
+    Button btnOrder;
+
     private SlimAdapter slimAdapter;
 
     public static ProductFragment newInstance() {
@@ -59,7 +63,7 @@ public class ProductFragment extends BaseAppMainFragment implements ProductPrese
         showRightImage(true, new OnCallBackToolbarAction() {
             @Override
             public void onCallBackToolbar() {
-                changeFragment(CartFragment.newInstance(),true);
+                changeFragment(CartFragment.newInstance(), true);
             }
         });
     }
@@ -69,6 +73,8 @@ public class ProductFragment extends BaseAppMainFragment implements ProductPrese
         super.onViewCreated(view, savedInstanceState);
         productPresenterIml.bind(this);
         productPresenterIml.getAllProductByCatId(String.valueOf(15), String.valueOf(1));
+
+        btnOrder.setVisibility(View.GONE);
 
         recyclerViewProduct.setLayoutManager(new GridLayoutManager(getContext(), 2));
         slimAdapter = SlimAdapter.create()
@@ -86,7 +92,7 @@ public class ProductFragment extends BaseAppMainFragment implements ProductPrese
                                     @Override
                                     public void onClick(View view) {
                                         Bundle bundle = new Bundle();
-                                        bundle.putInt("ID",data.getId());
+                                        bundle.putInt("ID", data.getId());
                                         changeFragment(DetailProductFragment.newInstance(bundle), true);
                                     }
                                 });

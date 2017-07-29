@@ -105,7 +105,6 @@ public class DetailProductFragment extends BaseAppMainFragment implements Detail
     @OnClick(R.id.btnAddToCart)
     public void onClickAddToCart() {
         EventBus.getDefault().post(product);
-//        MyApplication.getInstance().getBus().send(product);
     }
 
     @OnClick(R.id.btnBuyNow)

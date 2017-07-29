@@ -697,7 +697,7 @@ public class OrderReponse {
 
             param.put("shipping", shipping.getRequestBody());
             param.put("billing", billing.getRequestBody());
-            param.put("status", "processing");
+            param.put("set_paid", true);
 
             if (getLineItems() != null && getLineItems().size() != 0) {
                 JSONArray otherImagesArr = new JSONArray();

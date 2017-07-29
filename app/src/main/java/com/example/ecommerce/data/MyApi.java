@@ -10,8 +10,11 @@ import java.util.List;
 import io.reactivex.Flowable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -32,4 +35,8 @@ public interface MyApi {
 
     @POST("/wp-json/wc/v2/orders")
     Flowable<OrderReponse> createOrder(@Body RequestBody requestBody);
+
+    @FormUrlEncoded
+    @PUT("/wp-json/wc/v2/orders/{id}")
+    Flowable<OrderReponse> updateOrder(@Path("id")Integer orderId, @Field("status")String status);
 }

@@ -193,6 +193,7 @@ public class Billing {
             param.put("address_1", address1);
             param.put("address_2", address2);
             param.put("phone", phone);
+            param.put("email", email);
 
         } catch (Exception ex) {
             ex.printStackTrace();

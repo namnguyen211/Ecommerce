@@ -8,8 +8,15 @@ import com.example.ecommerce.MyApplication;
 import com.example.ecommerce.base.BaseAppMainFragment;
 import com.example.ecommerce.data.MyApi;
 import com.example.ecommerce.R;
+import com.example.ecommerce.data.reponse.Product;
 import com.example.ecommerce.ui.fragment.HomeFragment;
 import com.example.ecommerce.utils.MyAppToolbar;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -21,6 +28,8 @@ public class MainActivity extends BaseMainActivity<MyAppToolbar> {
 
     private int backPressCount;
     private BaseAppMainFragment currentFragment;
+
+    private List<Product> mListProduct = new ArrayList<>();
 
     @Inject
     @Named("oauth")
@@ -117,5 +126,26 @@ public class MainActivity extends BaseMainActivity<MyAppToolbar> {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public List<Product> getListProduct(){
+        return mListProduct;
+    }
+
+    @Subscribe
+    public void onEvent(Product product){
+        mListProduct.add(product);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
     }
 }

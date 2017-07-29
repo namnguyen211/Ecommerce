@@ -15,10 +15,10 @@ import vn.eazy.architect.mvp.usecase.action.NonParamRequestUseCase;
  * Created by NamNguyen on 25-Jul-17.
  */
 
-public class GetAllCategory extends BaseCustomUseCase implements NonParamRequestUseCase<List<Category>> {
+public class GetAllCategoryUseCase extends BaseCustomUseCase implements NonParamRequestUseCase<List<Category>> {
 
 
-    public GetAllCategory(Context context, MyApi apiService) {
+    public GetAllCategoryUseCase(Context context, MyApi apiService) {
         super(context, apiService);
     }
 

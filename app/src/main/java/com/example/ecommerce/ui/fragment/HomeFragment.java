@@ -80,7 +80,6 @@ public class HomeFragment extends BaseAppMainFragment implements HomePresenter.V
 
     @Override
     public void getDatasuccess(List<Category> data) {
-        data.get(0).getId();
         Toast.makeText(getContext(),data.get(0).getDescription(),Toast.LENGTH_SHORT).show();
     }
 }

@@ -8,8 +8,7 @@ import com.example.ecommerce.base.DataConsumer;
 import com.example.ecommerce.base.ErrorConsumer;
 import com.example.ecommerce.data.MyApi;
 import com.example.ecommerce.data.reponse.Category;
-import com.example.ecommerce.data.reponse.Product;
-import com.example.ecommerce.usecase.GetAllCategory;
+import com.example.ecommerce.usecase.GetAllCategoryUseCase;
 
 import java.util.List;
 
@@ -22,11 +21,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class HomePresenterIml extends BaseCustomPresenter<HomePresenter.View> implements HomePresenter.Presenter {
 
-    GetAllCategory getAllCategory;
+    GetAllCategoryUseCase getAllCategory;
 
     public HomePresenterIml(Context context, MyApi apiService) {
         super(context, apiService);
-        getAllCategory = new GetAllCategory(context, apiService);
+        getAllCategory = new GetAllCategoryUseCase(context, apiService);
     }
 
 
